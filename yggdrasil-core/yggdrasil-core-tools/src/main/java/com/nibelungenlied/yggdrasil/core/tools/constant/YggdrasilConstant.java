@@ -1,4 +1,4 @@
-package com.nibelungenlied.constant;
+package com.nibelungenlied.yggdrasil.core.tools.constant;
 
 /**
  * System Constant

@@ -1,6 +1,6 @@
-package com.nibelungenlied.api;
+package com.nibelungenlied.yggdrasil.core.tools.api;
 
-import com.nibelungenlied.constant.YggdrasilConstant;
+import com.nibelungenlied.yggdrasil.core.tools.constant.YggdrasilConstant;
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

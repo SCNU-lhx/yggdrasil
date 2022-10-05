@@ -7,6 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>yggdrasil-core</module>
+    <module>yggdrasil-gateway</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -15,14 +16,72 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <alibab.nacos.version>2021.1</alibab.nacos.version>
+    <junit.version>4.13.2</junit.version>
+    <spring.boot.version>2.7.3</spring.boot.version>
+    <spring.cloud.version>2021.0.4</spring.cloud.version>
+    <fastjson.version>2.0.14</fastjson.version>
+    <lombok.version>1.18.24</lombok.version>
+    <slf4j.version>2.0.1</slf4j.version>
+    <swagger-annotations.version>1.6.6</swagger-annotations.version>
   </properties>
-
+<dependencyManagement>
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>${spring.boot.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-dependencies</artifactId>
+      <version>${spring.cloud.version}</version>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+      <version>${alibab.nacos.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+      <version>${alibab.nacos.version}</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>${swagger-annotations.version}</version>
     </dependency>
   </dependencies>
 </project>

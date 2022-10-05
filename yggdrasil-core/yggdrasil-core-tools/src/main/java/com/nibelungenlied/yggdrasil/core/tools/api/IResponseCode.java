@@ -1,4 +1,4 @@
-package com.nibelungenlied.api;
+package com.nibelungenlied.yggdrasil.core.tools.api;
 
 import java.io.Serializable;
 

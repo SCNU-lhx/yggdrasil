@@ -1,4 +1,4 @@
-package com.nibelungenlied.api;
+package com.nibelungenlied.yggdrasil.core.tools.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
