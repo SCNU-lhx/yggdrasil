@@ -1,0 +1,36 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: yggdrasil-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.139.11.51:8848
+        namespace: af40cdd8-e33f-4ccd-967e-fc1ec67eba1d
+        group: yggdrasil
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.ipc.netty: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#自定义配置
+gateway:
+  nacos:
+    server-addr: ${spring.cloud.nacos.discovery.server-addr}
+    namespace: af40cdd8-e33f-4ccd-967e-fc1ec67eba1d
+    data-id: dynamic-routing.json
+    group: yggdrasil
