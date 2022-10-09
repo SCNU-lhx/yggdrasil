@@ -6,23 +6,10 @@
 
     <parent>
         <groupId>com.nibelungenlied</groupId>
-        <artifactId>yggdrasil</artifactId>
+        <artifactId>yggdrasil-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../yggdrasil-parent/pom.xml</relativePath>
     </parent>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.13.2</junit.version>
-        <spring.boot.version>2.6.11</spring.boot.version>
-        <spring.cloud.version>2021.0.4</spring.cloud.version>
-        <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
-        <fastjson.version>2.0.14</fastjson.version>
-        <lombok.version>1.18.24</lombok.version>
-        <nacos.version>2021.1</nacos.version>
-        <slf4j.version>2.0.1</slf4j.version>
-        <swagger-annotations.version>1.6.7</swagger-annotations.version>
-        <java.version>11</java.version>
-    </properties>
     <artifactId>yggdrasil-gateway</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
