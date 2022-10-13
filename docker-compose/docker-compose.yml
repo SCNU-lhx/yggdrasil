@@ -1,29 +1,33 @@
 version: '3'
 services:
   redis:
-    image: redis:latest
+    image: redis
     container_name: yggdrasil-redis
     restart: always
-    environment:
-      - REDIS_PASSWORD=redis@6379
     networks:
       - yggdrasil-net
     ports:
-      - 6379:6379
-    env_file: .env
+      - "6379:6379"
+    command:
+      --requirepass redis@6379
+    volumes:
+      - /docker/redis/data:/data
+      - /docker/redis/conf/redis.conf:/etc/redis/redis.conf
 
   mysql:
-    image: mysql:latest
+    image: mysql
     container_name: yggdrasil-mysql
     restart: always
     networks:
       - yggdrasil-net
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
-      TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: mysql@3306
-    env_file: .env
+      - MYSQL_ROOT_PASSWORD=mysql@3306
+    volumes:
+      - /docker/mysql/data:/var/lib/mysql
+      - /docker/mysql/conf:/etc/mysql/conf.d
+      - /docker/mysql/log:/var/log/mysql
 
   zookeeper:
     image: wurstmeister/zookeeper
@@ -57,8 +61,8 @@ services:
       - "19092:19092"
     environment:
       ZK_HOSTS: zookeeper:2181
-      KAFKA_MANAGER_USERNAME: kafka#manager
-      KAFKA_MANAGER_PASSWORD: kafka#manager@19092
+      KAFKA_MANAGER_USERNAME: kafka_manager
+      KAFKA_MANAGER_PASSWORD: kafka_manager@19092
       KM_ARGS: -Dhttp.port=19092
 
   nacos:
@@ -72,7 +76,6 @@ services:
       - MODE=standalone
     ports:
       - "8848:8848"
-    env_file: .env
 
   nginx:
     image: nginx
@@ -83,6 +86,12 @@ services:
     privileged: true
     networks:
       - yggdrasil-net
+    volumes:
+      - /docker/nginx/conf/conf.d:/etc/nginx/conf.d
+      - /docker/nginx/log:/var/log/nginx
+      - /docker/nginx/html:/usr/share/nginx/html
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/localtime:/etc/localtime
 
 networks:
   yggdrasil-net:
