@@ -1,0 +1,25 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: yggdrasil-bus
+  main:
+    allow-circular-references: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.139.11.51:8848
+        namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
+    stream:
+      kafka:
+        binder:
+          brokers: 43.139.11.51:9092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    root: info
