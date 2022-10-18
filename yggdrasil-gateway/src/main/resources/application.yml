@@ -8,8 +8,8 @@ spring:
     nacos:
       discovery:
         server-addr: 43.139.11.51:8848
-        namespace: af40cdd8-e33f-4ccd-967e-fc1ec67eba1d
-        group: yggdrasil
+        namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
+        group: YGGDRASIL_GROUP
     gateway:
       discovery:
         locator:
@@ -31,6 +31,6 @@ management:
 gateway:
   nacos:
     server-addr: ${spring.cloud.nacos.discovery.server-addr}
-    namespace: af40cdd8-e33f-4ccd-967e-fc1ec67eba1d
+    namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
     data-id: dynamic-routing.json
-    group: yggdrasil
+    group: YGGDRASIL_GROUP
