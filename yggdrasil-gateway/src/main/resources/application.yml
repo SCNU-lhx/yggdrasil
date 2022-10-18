@@ -5,16 +5,19 @@ spring:
   application:
     name: yggdrasil-gateway
   cloud:
-    nacos:
-      discovery:
-        server-addr: 43.139.11.51:8848
-        namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
-        group: YGGDRASIL_GROUP
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+    nacos:
+      discovery:
+        server-addr: 43.139.11.51:8848
+        namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
+    stream:
+      kafka:
+        binder:
+          brokers: 43.139.11.51:9092
 
 logging:
   level:
@@ -31,6 +34,6 @@ management:
 gateway:
   nacos:
     server-addr: ${spring.cloud.nacos.discovery.server-addr}
-    namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
+    namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
     data-id: dynamic-routing.json
     group: YGGDRASIL_GROUP

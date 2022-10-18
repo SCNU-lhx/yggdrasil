@@ -10,7 +10,7 @@ spring:
     nacos:
       discovery:
         server-addr: 43.139.11.51:8848
-        namespace: f33757f3-6159-4993-bbf5-eb289a1b28bc
+        namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
     stream:
       kafka:
         binder:
