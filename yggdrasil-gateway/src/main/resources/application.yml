@@ -14,6 +14,7 @@ spring:
       discovery:
         server-addr: 43.139.11.51:8848
         namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
+        group: YGGDRASIL_GROUP
     stream:
       kafka:
         binder:
