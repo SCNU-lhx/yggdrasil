@@ -47,7 +47,7 @@ services:
     ports:
       - "9092:9092"
     environment:
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ZOOKEEPER_CONNECT=43.139.11.51:2181
       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://43.139.11.51:9092
       - KAFKA_LISTENERS=PLAINTEXT://:9092
 
@@ -60,10 +60,19 @@ services:
     ports:
       - "19092:19092"
     environment:
-      ZK_HOSTS: zookeeper:2181
+      ZK_HOSTS: 43.139.11.51:2181
       KAFKA_MANAGER_USERNAME: kafka_manager
       KAFKA_MANAGER_PASSWORD: kafka_manager@19092
       KM_ARGS: -Dhttp.port=19092
+
+  kafka-ui-lite:
+    image: freakchicken/kafka-ui-lite
+    container_name: yggdrasil-kafka-ui-lite
+    restart: always
+    networks:
+      - yggdrasil-net
+    ports:
+      - "8889:8889"
 
   nacos:
     image: nacos/nacos-server
