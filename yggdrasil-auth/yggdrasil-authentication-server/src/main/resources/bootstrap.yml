@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 43.139.11.51:8848
+      discovery:
+        enabled: true
+        namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
+      config:
+        enabled: true
+        namespace: e5035c6b-7174-4713-bd39-4ffb2bf60f92
+
