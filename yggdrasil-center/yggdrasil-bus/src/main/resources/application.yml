@@ -16,6 +16,9 @@ spring:
       kafka:
         binder:
           brokers: 43.139.11.51:9092
+    bus:
+      enabled: true
+      destination: yggdrasil-bus
 management:
   endpoints:
     web:
