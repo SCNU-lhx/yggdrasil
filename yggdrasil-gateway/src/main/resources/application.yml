@@ -19,6 +19,11 @@ spring:
       kafka:
         binder:
           brokers: 43.139.11.51:9092
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      destination: yggdrasil-gateway
 
 logging:
   level:
