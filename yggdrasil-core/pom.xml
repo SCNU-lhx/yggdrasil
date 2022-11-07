@@ -15,6 +15,8 @@
     <modules>
         <module>yggdrasil-core-tools</module>
         <module>yggdrasil-core-web</module>
+        <module>yggdrasil-core-facade</module>
+        <module>yggdrasil-core-auth</module>
     </modules>
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
