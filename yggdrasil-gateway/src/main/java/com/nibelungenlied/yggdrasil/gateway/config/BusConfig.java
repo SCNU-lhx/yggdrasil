@@ -22,8 +22,9 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 public class BusConfig {
 
-    private static final String EXCHANGE_NAME = "yggdrasil-exchange";
-    private static final String ROUTING_KEY = "yggdrasil-gateway-route";
+    public static final String QUEUE_NAME = "event-gateway";
+    public static final String EXCHANGE_NAME = "yggdrasil-exchange";
+    public static final String ROUTING_KEY = "yggdrasil-gateway-route";
 
     @Value("${spring.application.name}")
     private String appName;
